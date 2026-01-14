@@ -110,7 +110,7 @@ title: Mache Piyay | Milti koleksyon.
               data-item-id="{{ pwodwi.titre | slugify }}"
               data-item-price="{{ pwodwi.pri }}"
               data-item-url="/"
-              data-item-description="{{ pwodwi.deskripsyon }}"
+              data-item-description="{{ pwodwi.body | strip_html | truncate: 100 }}"
               data-item-image="{{ pwodwi.imaj }}"
               data-item-name="{{ pwodwi.titre }}">
               Ajoute nan Panyen

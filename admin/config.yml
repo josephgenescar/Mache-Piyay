@@ -12,6 +12,7 @@ collections:
     create: true # Pèmèt kliyan an kreye nouvo rad
     slug: "{{slug}}"
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "produit"}
       - {label: "Tit Rad la", name: "titre", widget: "string"}
       - {label: "Pri (HTG)", name: "pri", widget: "number"}
       - {label: "Foto Rad la", name: "imaj", widget: "image"}
