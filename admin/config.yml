@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main # Asire w branch ou a rele 'main' nan GitHub Desktop
+
+media_folder: "assets/img" # Kote foto yo pral sove
+public_folder: "/assets/img"
+
+collections:
+  - name: "produits"
+    label: "Pwodwi yo"
+    folder: "_produits"
+    create: true # Pèmèt kliyan an kreye nouvo rad
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tit Rad la", name: "titre", widget: "string"}
+      - {label: "Pri (HTG)", name: "pri", widget: "number"}
+      - {label: "Foto Rad la", name: "imaj", widget: "image"}
+      - {label: "Deskripsyon", name: "body", widget: "markdown"}
