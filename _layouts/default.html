@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="hc">
 <head>
@@ -22,39 +25,48 @@
     <style>
         :root { --nwa: #1a1a1a; --lò: #c5a059; --blan: #ffffff; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
-        .navbar { background-color: var(--nwa) !important; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; overflow-x: hidden; }
+        
+        /* Navbar Full Width Laptop */
+        .navbar { background-color: var(--nwa) !important; padding: 15px 0; }
+        
+        /* Hero Section - Full Width Fix */
         .hero-boutik {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
-            height: 60vh; display: flex; align-items: center; justify-content: center;
+            width: 100vw; height: 60vh; 
+            display: flex; align-items: center; justify-content: center;
             color: var(--blan); text-align: center;
+            margin-left: calc(-50vw + 50%);
         }
+
+        /* Card Pwodwi Style */
         .card-pwodwi { border: none; border-radius: 15px; transition: 0.3s; overflow: hidden; background: white; height: 100%; }
         .card-pwodwi:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .img-container { height: 280px; overflow: hidden; }
+        .img-container { height: 300px; overflow: hidden; background-color: #f0f0f0; }
         .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        .pri-tag { font-size: 1.3rem; font-weight: 700; color: var(--lò); }
-        .btn-achte { background: var(--nwa); color: white; border-radius: 30px; padding: 10px; width: 100%; border: none; transition: 0.3s; }
-        .btn-achte:hover { background: var(--lò); }
+        
+        .pri-tag { font-size: 1.4rem; font-weight: 700; color: #28a745; }
+        .btn-achte { background: var(--nwa); color: white; border-radius: 30px; padding: 12px; width: 100%; border: none; font-weight: 600; transition: 0.3s; }
+        .btn-achte:hover { background: var(--lò); color: #000; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="#">MACHE PIYAY</a>
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand fw-bold text-warning fs-3" href="#">MACHE PIYAY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link text-white" href="#manba-section">Manba</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#epiz-section">Epiz</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#ong-section">Ong & Rad</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#kontak-section">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#manba-section">Manba</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#epiz-section">Epiz</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#ong-section">Ong & Rad</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="/about/">About</a></li>
                     <li class="nav-item ms-lg-3">
-                        <button class="snipcart-checkout btn btn-warning btn-sm fw-bold">
+                        <button class="snipcart-checkout btn btn-warning rounded-pill px-4 fw-bold">
                             <i class="bi bi-cart3"></i> Panyen (<span class="snipcart-items-count">0</span>)
                         </button>
                     </li>
@@ -65,70 +77,73 @@
 
     <header class="hero-boutik text-white">
         <div class="container">
-            <h1 class="display-3 fw-bold text-uppercase">Mache Piyay</h1>
-            <p class="lead mb-4">Bon pwodwi natirèl ak rad ki alamòd.</p>
-            <a href="#manba-section" class="btn btn-warning btn-lg px-5">Al Achte</a>
+            <h1 class="display-2 fw-bold text-uppercase">Mache Piyay</h1>
+            <p class="lead fs-3 mb-4">Bon pwodwi natirèl ak rad ki alamòd.</p>
+            <a href="#manba-section" class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow">Al Achte</a>
         </div>
     </header>
 
-    <main class="container py-5">
+    <main class="container-fluid px-lg-5 py-5">
         
         <section id="manba-section" class="py-5">
-            <h2 class="text-center mb-5 fw-bold">🥜 Koleksyon Manba</h2>
+            <h2 class="text-center mb-5 fw-bold display-5">🥜 Koleksyon Manba</h2>
             <div class="row g-4">
-                {% assign manbas = site.produits | where: "kategori", "Manba" %}
-                {% for pwodwi in manbas %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-pwodwi shadow-sm text-center p-3">
-                        <div class="img-container rounded mb-3">
-                            <img src="{{ pwodwi.imaj | relative_url }}" alt="{{ pwodwi.titre }}">
+                {% for pwodwi in site.produits %}
+                  {% if pwodwi.kategori == "Manba" %}
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="card card-pwodwi shadow-sm text-center p-3">
+                            <div class="img-container rounded mb-3">
+                                <img src="{{ pwodwi.imaj }}" alt="{{ pwodwi.titre }}">
+                            </div>
+                            <h5 class="fw-bold text-uppercase">{{ pwodwi.titre }}</h5>
+                            <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
+                            <button class="snipcart-add-item btn-achte"
+                                data-item-id="{{ pwodwi.titre | slugify }}"
+                                data-item-name="{{ pwodwi.titre }}"
+                                data-item-price="{{ pwodwi.pri }}"
+                                data-item-url="/"
+                                data-item-image="{{ pwodwi.imaj }}">
+                                Ajoute nan Panyen
+                            </button>
                         </div>
-                        <h5 class="fw-bold text-uppercase">{{ pwodwi.titre }}</h5>
-                        <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
-                        <button class="snipcart-add-item btn-achte"
-                            data-item-id="{{ pwodwi.titre | slugify }}"
-                            data-item-name="{{ pwodwi.titre }}"
-                            data-item-price="{{ pwodwi.pri }}"
-                            data-item-url="/"
-                            data-item-image="{{ pwodwi.imaj | relative_url }}">
-                            Ajoute nan Panyen
-                        </button>
                     </div>
-                </div>
+                  {% endif %}
                 {% endfor %}
             </div>
         </section>
 
-        <section id="epiz-section" class="py-5 bg-white rounded shadow-sm px-3 mb-5">
-            <h2 class="text-center mb-5 fw-bold">🌿 Epis Prepare</h2>
+        <section id="epiz-section" class="py-5 bg-white rounded-4 shadow-sm px-4 mb-5">
+            <h2 class="text-center mb-5 fw-bold display-5">🌿 Epis Prepare</h2>
             <div class="row g-4">
-                {% assign epis = site.produits | where: "kategori", "Epis Prepare" %}
-                {% for pwodwi in epis %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-pwodwi shadow-sm text-center p-3 border">
-                        <div class="img-container rounded mb-3"><img src="{{ pwodwi.imaj | relative_url }}"></div>
-                        <h5 class="fw-bold">{{ pwodwi.titre }}</h5>
-                        <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
-                        <button class="snipcart-add-item btn-achte" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj | relative_url }}">Ajoute nan Panyen</button>
+                {% for pwodwi in site.produits %}
+                  {% if pwodwi.kategori == "Epis Prepare" %}
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="card card-pwodwi text-center p-3 border-0">
+                            <div class="img-container rounded mb-3"><img src="{{ pwodwi.imaj }}"></div>
+                            <h5 class="fw-bold">{{ pwodwi.titre }}</h5>
+                            <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
+                            <button class="snipcart-add-item btn-achte" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj }}">Ajoute nan Panyen</button>
+                        </div>
                     </div>
-                </div>
+                  {% endif %}
                 {% endfor %}
             </div>
         </section>
 
         <section id="ong-section" class="py-5">
-            <h2 class="text-center mb-5 fw-bold">👗 Rad ak Swen Ong</h2>
+            <h2 class="text-center mb-5 fw-bold display-5">👗 Rad ak Swen Ong</h2>
             <div class="row g-4">
-                {% assign rads = site.produits | where: "kategori", "Rad" %}
-                {% for pwodwi in rads %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-pwodwi shadow-sm text-center p-3">
-                        <div class="img-container rounded mb-3"><img src="{{ pwodwi.imaj | relative_url }}"></div>
-                        <h5 class="fw-bold">{{ pwodwi.titre }}</h5>
-                        <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
-                        <button class="snipcart-add-item btn-achte" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj | relative_url }}">Ajoute nan Panyen</button>
+                {% for pwodwi in site.produits %}
+                  {% if pwodwi.kategori == "Rad" %}
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="card card-pwodwi shadow-sm text-center p-3">
+                            <div class="img-container rounded mb-3"><img src="{{ pwodwi.imaj }}"></div>
+                            <h5 class="fw-bold">{{ pwodwi.titre }}</h5>
+                            <div class="pri-tag mb-3">{{ pwodwi.pri }} HTG</div>
+                            <button class="snipcart-add-item btn-achte" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj }}">Ajoute nan Panyen</button>
+                        </div>
                     </div>
-                </div>
+                  {% endif %}
                 {% endfor %}
             </div>
         </section>
@@ -136,23 +151,23 @@
     </main>
 
     <footer id="kontak-section" class="bg-dark text-white pt-5 pb-4">
-        <div class="container text-center">
+        <div class="container-fluid px-lg-5 text-center">
             <div class="row">
-                <div class="col-md-4 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Mache Piyay</h5>
-                    <p>Kalite ak pri se priyorite nou.</p>
+                <div class="col-md-4 mx-auto mb-4">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Mache Piyay</h5>
+                    <p class="opacity-75">Kalite ak pri se priyorite nou nan chak pwodwi nou vann.</p>
                 </div>
-                <div class="col-md-4 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Kontak</h5>
-                    <p><i class="bi bi-geo-alt me-2"></i> Pòtoprens, Ayiti</p>
-                    <p><i class="bi bi-envelope me-2"></i> josephgenescar@gmail.com</p>
-                    <a href="https://wa.me/50948868964" class="btn btn-success btn-sm mt-2" target="_blank">
+                <div class="col-md-4 mx-auto mb-4">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Kontak</h5>
+                    <p><i class="bi bi-geo-alt me-2 text-warning"></i> Pòtoprens, Ayiti</p>
+                    <p><i class="bi bi-envelope me-2 text-warning"></i> josephgenescar@gmail.com</p>
+                    <a href="https://wa.me/50948868964" class="btn btn-success rounded-pill mt-2 px-4 shadow-sm" target="_blank">
                         <i class="bi bi-whatsapp"></i> WhatsApp: 4886-8964
                     </a>
                 </div>
             </div>
-            <hr class="my-4 border-secondary">
-            <p class="small text-muted mb-0">Copyright © 2026 Mache Piyay. Design pa Rivayo3.</p>
+            <hr class="my-4 border-secondary opacity-25">
+            <p class="small text-muted mb-0">Copyright © 2026 Mache Piyay. Design pa <strong>Rivayo3</strong>.</p>
         </div>
     </footer>
 
