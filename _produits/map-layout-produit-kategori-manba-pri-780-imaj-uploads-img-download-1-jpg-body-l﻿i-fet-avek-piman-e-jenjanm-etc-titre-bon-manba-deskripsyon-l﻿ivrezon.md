@@ -1,9 +1,9 @@
 ---
 layout: produit
-titre: Bon manba
-pri: 780
-imaj: /uploads/img/download-1-.jpg
+titre: Epis prepare
+pri: 548
+imaj: /uploads/img/download-2-.jpg
 deskripsyon: l﻿ivrezon
-kategori: Manba
+kategori: Epis Prepare
 ---
-l﻿i fet avek piman e jenjanm etc
+l﻿i fet avek piman e Epis etc
