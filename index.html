@@ -95,8 +95,8 @@
         <section id="manba">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-nut me-2"></i>KOLEKSYON MANBA</h2>
             <div class="row g-4">
-                {% assign manbas = site.produits | where: "kategori", "Manba" %}
-                {% for pwodwi in manbas %}
+               <div> {% assign manbas = site.produits | where: "kategori", "Manba" %}
+                {% for pwodwi in manbas %}</div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-pwodwi shadow-sm">
                         <div class="img-container">
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+               
             </div>
         </section>
 
