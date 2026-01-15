@@ -95,16 +95,14 @@
         <section id="manba">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-nut me-2"></i>KOLEKSYON MANBA</h2>
             <div class="row g-4">
-               <div> {% assign manbas = site.produits | where: "kategori", "Manba" %}
-                {% for pwodwi in manbas %}</div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-pwodwi shadow-sm">
                         <div class="img-container">
                             <img src="{{ pwodwi.imaj }}" alt="{{ pwodwi.titre }}">
                         </div>
                         <div class="card-body text-center p-4">
-                            <h4 class="fw-bold">{{ pwodwi.titre }}</h4>
-                            <p class="pri-tag mb-3">{{ pwodwi.pri }} HTG</p>
+                            <h4 class="fw-bold"></h4>
+                            <p class="pri-tag mb-3"></p>
                             <button class="snipcart-add-item btn-panyen"
                                 data-item-id="{{ pwodwi.titre | slugify }}"
                                 data-item-name="{{ pwodwi.titre }}"
@@ -123,38 +121,32 @@
         <section id="epiz" class="bg-white rounded-4 p-4 shadow-sm my-5">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-leaf me-2"></i>EPIZ PREPARE</h2>
             <div class="row g-4">
-                {% assign epiz = site.produits | where: "kategori", "Epiz Prepare" %}
-                {% for pwodwi in epiz %}
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-pwodwi border">
                         <div class="img-container"><img src="{{ pwodwi.imaj }}"></div>
                         <div class="card-body text-center p-4">
-                            <h4 class="fw-bold">{{ pwodwi.titre }}</h4>
-                            <p class="pri-tag">{{ pwodwi.pri }} HTG</p>
+                            <h4 class="fw-bold"></h4>
+                            <p class="pri-tag"></p>
                             <button class="snipcart-add-item btn-panyen" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj }}">Ajoute nan Panyen</button>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </section>
 
         <section id="rad">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-gem me-2"></i>RAD AK SWEN ONG</h2>
             <div class="row g-4">
-                {% assign rads = site.produits | where: "kategori", "Rad" %}
-                {% for pwodwi in rads %}
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-pwodwi shadow-sm">
                         <div class="img-container"><img src="{{ pwodwi.imaj }}"></div>
                         <div class="card-body text-center p-4">
-                            <h4 class="fw-bold">{{ pwodwi.titre }}</h4>
-                            <p class="pri-tag">{{ pwodwi.pri }} HTG</p>
+                            <h4 class="fw-bold"></h4>
+                            <p class="pri-tag"></p>
                             <button class="snipcart-add-item btn-panyen" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj }}">Ajoute nan Panyen</button>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </section>
 
