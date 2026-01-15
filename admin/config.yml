@@ -2,12 +2,12 @@ backend:
   name: git-gateway
   branch: main # Asire w branch ou a rele 'main' nan GitHub Desktop
 
-media_folder: "/assets/uploads/img" # Kote foto yo pral sove
-public_folder: "/assets/uploads/img"
+media_folder: "/uploads/img" # Kote foto yo pral sove
+public_folder: "/uploads/img"
 
 collections:
   - name: "produits"
-    label: "Pwodwi yo"
+    label: "images"
     folder: "_produits"
     create: true # Pèmèt kliyan an kreye nouvo rad
     slug: "{{slug}}"
