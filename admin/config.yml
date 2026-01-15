@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main # Asire w branch ou a rele 'main' nan GitHub Desktop
 
-media_folder: "/uploads/img" # Kote foto yo pral sove
-public_folder: "/uploads/img"
+media_folder: "/assets/uploads/img" # Kote foto yo pral sove
+public_folder: "/assets/uploads/img"
 
 collections:
   - name: "produits"
@@ -13,9 +13,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "produit"}
-      - {label: "Tit Rad la", name: "titre", widget: "string"}
+      - {label: "Tit la", name: "titre", widget: "string"}
       - {label: "Pri (HTG)", name: "pri", widget: "number"}
-      - {label: "Foto Rad la", name: "imaj", widget: "image"}
+      - {label: "Foto la", name: "imaj", widget: "image"}
       - {label: "Deskripsyon", name: "body", widget: "markdown"}
       
       - {label: "Kategori", name: "kategori", widget: "select", options: ["Manba", "Epis Prepare", "Rad", "Ong"]}
