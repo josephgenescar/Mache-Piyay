@@ -139,7 +139,7 @@ hero_image: /assets/images/hero-bg.jpg
         </section>
 
         <section id="rad">
-            <h2 class="text-center mb-5 fw-bold"><i class="bi bi-gem me-2"></i>RAD AK SWEN ONG</h2>
+            <h2 class="text-center mb-5 fw-bold"><i class="bi bi-gem me-2"></i>RAD</h2>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-pwodwi shadow-sm">
@@ -153,7 +153,21 @@ hero_image: /assets/images/hero-bg.jpg
                 </div>
             </div>
         </section>
-
+<section id="ong">
+            <h2 class="text-center mb-5 fw-bold"><i class="bi bi-gem me-2"></i>SWEN ONG</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-pwodwi shadow-sm">
+                        <div class="img-container"><img src="{{ pwodwi.imaj }}"></div>
+                        <div class="card-body text-center p-4">
+                            <h4 class="fw-bold"></h4>
+                            <p class="pri-tag"></p>
+                            <button class="snipcart-add-item btn-panyen" data-item-id="{{ pwodwi.titre | slugify }}" data-item-name="{{ pwodwi.titre }}" data-item-price="{{ pwodwi.pri }}" data-item-url="/" data-item-image="{{ pwodwi.imaj }}">Ajoute nan Panyen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer class="bg-dark text-white py-5">
