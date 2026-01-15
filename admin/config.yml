@@ -18,4 +18,4 @@ collections:
       - {label: "Foto Rad la", name: "imaj", widget: "image"}
       - {label: "Deskripsyon", name: "body", widget: "markdown"}
       
-      - {label: "Kategori", name: "kategori", widget: "select", options: ["Manba", "Epis Prepare", "Rad"]}
+      - {label: "Kategori", name: "kategori", widget: "select", options: ["Manba", "Epis Prepare", "Rad", "Ong"]}
