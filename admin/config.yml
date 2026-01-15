@@ -7,7 +7,7 @@ public_folder: "/uploads/img"
 
 collections:
   - name: "produits"
-    label: "images"
+    label: "pwodwi yo"
     folder: "_produits"
     create: true # Pèmèt kliyan an kreye nouvo rad
     slug: "{{slug}}"
@@ -17,5 +17,4 @@ collections:
       - {label: "Pri (HTG)", name: "pri", widget: "number"}
       - {label: "Foto la", name: "imaj", widget: "image"}
       - {label: "Deskripsyon", name: "body", widget: "markdown"}
-      
       - {label: "Kategori", name: "kategori", widget: "select", options: ["Manba", "Epis Prepare", "Rad", "Ong"]}
